@@ -4,10 +4,9 @@ import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { NavigationScreens } from '../types';
 import { useFocusEffect } from '@react-navigation/native';
 import VideoPlayer from '../components/player/VideoPlayer';
-import {playScreenstyle as styles} from '../styles/PlayScreenStyles'
+import { playScreenstyle as styles } from '../styles/PlayScreenStyles';
 
-
-type Props = NativeStackScreenProps<NavigationScreens, 'Player'>
+type Props = NativeStackScreenProps<NavigationScreens, 'Player'>;
 
 const PlayerScreen: React.FC<Props> = ({ navigation, route }) => {
   const { item } = route.params;
@@ -17,24 +16,24 @@ const PlayerScreen: React.FC<Props> = ({ navigation, route }) => {
   };
 
   const handleVideoError = (error: string) => {
-    console.error(error)
+    console.error('Video playback error:', error);
+  };
 
-  }
   useFocusEffect(
     React.useCallback(() => {
       const onBackPress = () => {
         navigation.goBack();
-        return true
+        return true;
       };
 
       const backHandler = BackHandler.addEventListener('hardwareBackPress', onBackPress);
       return () => backHandler.remove();
     }, [navigation])
-  )
+  );
+
   return (
     <View style={styles.container}>
       <StatusBar hidden={true} />
-
       <VideoPlayer
         streamUrl={item.streamUrl}
         onError={handleVideoError}
@@ -42,5 +41,6 @@ const PlayerScreen: React.FC<Props> = ({ navigation, route }) => {
       />
     </View>
   );
-}
+};
+
 export default PlayerScreen;

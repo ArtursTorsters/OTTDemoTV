@@ -119,7 +119,6 @@ export const detailStyle = StyleSheet.create({
     fontWeight: '500',
   },
 
-  // TV FOCUS STYLING FOR BUTTONS
   focusedButton: {
     borderWidth: 3,
     borderColor: colors.tvFocus,

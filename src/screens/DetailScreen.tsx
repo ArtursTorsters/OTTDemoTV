@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
   View,
   Text,
-  TouchableOpacity,
   Image,
   ScrollView,
   SafeAreaView,
@@ -16,13 +15,12 @@ import { useFocusEffect } from '@react-navigation/native';
 import { detailStyle as styles } from '../styles/DetailScreenStyles';
 import { CatalogService } from '../services/catalogService';
 import { colors } from '../styles/theme';
+import { FocusableButton } from '../components/comon/FocusableButton';
 
 type Props = NativeStackScreenProps<NavigationScreens, 'Details'>;
 
 const DetailsScreen: React.FC<Props> = ({ navigation, route }) => {
   const { item } = route.params;
-  const [playButtonFocused, setPlayButtonFocused] = useState(false);
-  const [backButtonFocused, setBackButtonFocused] = useState(false);
 
   const handlePlayPress = () => {
     navigation.navigate('Player', { item });
@@ -44,8 +42,8 @@ const DetailsScreen: React.FC<Props> = ({ navigation, route }) => {
     }, [navigation])
   );
 
-  const getFocusedButtonStyle = (focused: boolean) => ({
-    ...(focused && Platform.isTV && {
+  const getFocusedButtonStyle = () => ({
+    ...(Platform.isTV && {
       backgroundColor: colors.primary,
     }),
   });
@@ -95,37 +93,21 @@ const DetailsScreen: React.FC<Props> = ({ navigation, route }) => {
             <Text style={styles.description}>{item.description}</Text>
 
             <View style={styles.buttonContainer}>
-              <TouchableOpacity
-                style={[
-                  styles.playButton,
-                  getFocusedButtonStyle(playButtonFocused)
-                ]}
-                focusable={true}
+              <FocusableButton
+                style={styles.playButton}
+                focusedStyle={getFocusedButtonStyle()}
                 onPress={handlePlayPress}
-                activeOpacity={1}
-                onFocus={() => setPlayButtonFocused(true)}
-                onBlur={() => setPlayButtonFocused(false)}
               >
-                <Text style={styles.playButtonText}>
-                  ▶ Play
-                </Text>
-              </TouchableOpacity>
+                <Text style={styles.playButtonText}>▶ Play</Text>
+              </FocusableButton>
 
-              <TouchableOpacity
-                style={[
-                  styles.backButton,
-                  getFocusedButtonStyle(backButtonFocused)
-                ]}
+              <FocusableButton
+                style={styles.backButton}
+                focusedStyle={getFocusedButtonStyle()}
                 onPress={handleBackPress}
-                activeOpacity={1}
-                focusable={true}
-                onFocus={() => setBackButtonFocused(true)}
-                onBlur={() => setBackButtonFocused(false)}
               >
-                <Text style={styles.backButtonText}>
-                  ← Back
-                </Text>
-              </TouchableOpacity>
+                <Text style={styles.backButtonText}>← Back</Text>
+              </FocusableButton>
             </View>
           </View>
         </View>

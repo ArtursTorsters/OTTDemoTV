@@ -42,7 +42,6 @@ export const videoPlayerStyles = StyleSheet.create({
     color: colors.textPrimary,
   },
 
-  // CONTROLS BAR
   controlsBar: {
     backgroundColor: 'rgba(0, 0, 0, 0.9)',
     paddingHorizontal: spacing.lg,
@@ -103,8 +102,6 @@ export const videoPlayerStyles = StyleSheet.create({
   },
 
   playPauseButton: {
-    // backgroundColor: colors.primary,
-    // paddingHorizontal: spacing.lg,
     paddingVertical: spacing.xs,
     borderRadius: borderRadius.md,
     borderWidth: 2,
@@ -127,7 +124,6 @@ export const videoPlayerStyles = StyleSheet.create({
     fontSize: 16,
   },
 
-  // FOCUS STYLING
   focusedControl: {
     borderColor: colors.tvFocus,
     backgroundColor: 'rgba(0, 212, 255, 0.2)',
@@ -164,7 +160,6 @@ export const videoPlayerStyles = StyleSheet.create({
     textShadowRadius: 2,
   },
 
-  // ERROR STATES
   errorContainer: {
     flex: 1,
     ...mixins.center,
@@ -196,7 +191,6 @@ export const videoPlayerStyles = StyleSheet.create({
     fontWeight: '600',
   },
 
-  // DEBUG (only visible in DEV)
   debugInfo: {
     marginTop: spacing.xs,
     alignSelf: 'center',
