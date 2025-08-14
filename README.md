@@ -33,11 +33,19 @@ npm install
    ```
 ## Libraries Used
 
+- **react-native-video** - Video playback (HLS/MP4 support)
 - **react-native-tvos@0.81.0-0** - TV-specific React Native build with proper focus handling
-- **react-native-video@6.16.1** - Robust video playback with HLS/MP4 support and TV controls
-- **@react-navigation/native@7.1.17** - Industry-standard navigation with screen management
+- **@react-navigation/native** - Screen navigation
+- **jest** - Testing framework
+- **@testing-library/react-native** - Component testing
 
 ### Run All Tests
 ```bash
 npm test
 ```
+
+### Current Limitations
+- **Single Video Quality** - No adaptive bitrate selection
+- **No Subtitles** - Subtitle support not implemented
+- **Basic Progress Bar** - No scrubbing/seeking via progress bar
+- **Simple Error Handling** - Generic error messages without retry mechanisms
