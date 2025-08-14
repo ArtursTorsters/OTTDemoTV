@@ -14,7 +14,6 @@ const ErrorState: React.FC<ErrorStateProps> = ({ message, onRetry }) => {
           style={styles.retryButton}
           onPress={onRetry}
           activeOpacity={0.8}
-          hasTVPreferredFocus={true} // tv focus
         >
           <Text style={styles.retryText}>Try Again</Text>
         </TouchableOpacity>
