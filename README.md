@@ -1,42 +1,43 @@
 # React Native Android TV OTT Demo
 
-A simple Android TV streaming app with catalog browsing, video details, and video playback.
+A React Native streaming app built specifically for Android TV with catalog browsing, video details, and video playback functionality.
 
-## Quick Start
+## Setup & Installation
 
-### Setup
+### Prerequisites
+- Node.js 18+
+- Android Studio with Android TV emulator
+- React Native development environment
+
+### Install Dependencies
 ```bash
-git clone <repo-url>
-cd ott-demo
+git clone <repository-url>
+cd react-native-android-tv-demo
 npm install
 ```
 
 ### Run on Android TV Emulator
-1. Start Android TV emulator from Android Studio
-2. Start Metro bundler:
+
+1. **Start Android TV Emulator**
+   - Open Android Studio
+   - Start an Android TV emulator
+
+2. **Start Metro Bundler**
    ```bash
    npx react-native start
    ```
-3. In another terminal, run the app:
+
+3. **Run the App**
    ```bash
    npx react-native run-android
    ```
+## Libraries Used
 
-### Run Tests
+- **react-native-tvos@0.81.0-0** - TV-specific React Native build with proper focus handling
+- **react-native-video@6.16.1** - Robust video playback with HLS/MP4 support and TV controls
+- **@react-navigation/native@7.1.17** - Industry-standard navigation with screen management
+
+### Run All Tests
 ```bash
 npm test
 ```
-
-## Libraries Used
-
-- **react-native-video** - Video playback (HLS/MP4 support)
-- **@react-navigation/native** - Screen navigation
-- **jest** - Testing framework
-- **@testing-library/react-native** - Component testing
-
-##  Features
-
-- **Home**: Video catalog grid with thumbnails
-- **Details**: Video info with play button
-- **Player**: Video playback with auto-hiding controls
-- **TV Navigation**: D-pad focus management
