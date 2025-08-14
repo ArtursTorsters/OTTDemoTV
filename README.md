@@ -12,7 +12,7 @@ A React Native streaming app built specifically for Android TV with catalog brow
 ### Install Dependencies
 ```bash
 git clone <repository-url>
-cd react-native-android-tv-demo
+cd OTTDemoTV
 npm install
 ```
 
